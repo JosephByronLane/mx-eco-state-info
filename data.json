@@ -1,87 +1,86 @@
 {
-    "Noroeste": {
-      "Estados": [
-        "Baja California",
-        "Baja California Sur",
-        "Chihuahua",
-        "Durango",
-        "Sinaloa",
-        "Sonora"
-      ],
-      "Actividades-Economicas": "Agricultura de exportación, ganadería, pesca y maquiladoras de la frontera",
-      "PIB": "4 890 564 millones MXN (2023)",
-      "Sueldos-y-salarios": "12 596 MXN mensuales (Zona Libre de la Frontera Norte, 2025)",
-      "Habitantes": "16 113 769 (Censo 2020)"
-    },
-    "Noreste": {
-      "Estados": [
-        "Coahuila",
-        "Nuevo León",
-        "Tamaulipas"
-      ],
-      "Actividades-Economicas": "Industria pesada, petroquímica y manufactura",
-      "PIB": "4 625 119 millones MXN (2023)",
-      "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
-      "Habitantes": "12 458 948 (Censo 2020)"
-    },
-    "Occidente": {
-      "Estados": [
-        "Colima",
-        "Jalisco",
-        "Michoacán",
-        "Nayarit"
-      ],
-      "Actividades-Economicas": "Agricultura diversificada (granos, frutas), pesca y sector manufacturero",
-      "PIB": "3 689 582 millones MXN (2023)",
-      "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
-      "Habitantes": "15 063 844 (Censo 2020)"
-    },
-    "Centro-País": {
-      "Estados": [
-        "Aguascalientes",
-        "Guanajuato",
-        "Querétaro",
-        "San Luis Potosí",
-        "Zacatecas",
-        "Estado de México",
-        "Ciudad de México"
-      ],
-      "Actividades-Economicas": "Servicios financieros, comercio, industria ligera y turismo de negocios",
-      "PIB": "7 941 809 millones MXN (2023)",
-      "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
-      "Habitantes": "40 607 763 (Censo 2020)"
-    },
-    "Oriente": {
-      "Estados": [
-        "Veracruz",
-        "Tabasco"
-      ],
-      "Actividades-Economicas": "Petróleo, petroquímica, puertos y agricultura de palma y cítricos",
-      "PIB": "3 188 478 millones MXN (2023)",
-      "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
-      "Habitantes": "10 465 177 (Censo 2020)"
-    },
-    "Sur": {
-      "Estados": [
-        "Chiapas",
-        "Guerrero",
-        "Oaxaca"
-      ],
-      "Actividades-Economicas": "Agricultura (café, maíz), turismo cultural y moda textil",
-      "PIB": "— dato no consolidado en la clasificación regional estándar —",
-      "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
-      "Habitantes": "13 216 661 (Censo 2020)"
-    },
-    "Sureste": {
-      "Estados": [
-        "Yucatán",
-        "Campeche",
-        "Quintana Roo"
-      ],
-      "Actividades-Economicas": "Turismo de playa, petróleo offshore y agricultura de henequén",
-      "PIB": "2 382 992 millones MXN (2023)",
-      "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
-      "Habitantes": "5 107 246 (Censo 2020)"
-    }
+  "Noroeste": {
+    "Estados": [
+      "Baja California",
+      "Baja California Sur",
+      "Chihuahua",
+      "Durango",
+      "Sinaloa",
+      "Sonora"
+    ],
+    "Actividades-Economicas": "Agricultura de exportación, ganadería, pesca y maquiladoras de la frontera",
+    "PIB": "4 890 564 millones MXN (2023)",
+    "Sueldos-y-salarios": "12 596 MXN mensuales (Zona Libre de la Frontera Norte, 2025)",
+    "Habitantes": "16 113 769 (Censo 2020)"
+  },
+  "Noreste": {
+    "Estados": [
+      "Coahuila",
+      "Nuevo León",
+      "Tamaulipas"
+    ],
+    "Actividades-Economicas": "Industria pesada, petroquímica y manufactura",
+    "PIB": "4 625 119 millones MXN (2023)",
+    "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
+    "Habitantes": "12 458 948 (Censo 2020)"
+  },
+  "Occidente": {
+    "Estados": [
+      "Colima",
+      "Jalisco",
+      "Michoacán",
+      "Nayarit"
+    ],
+    "Actividades-Economicas": "Agricultura diversificada (granos, frutas), pesca y sector manufacturero",
+    "PIB": "3 689 582 millones MXN (2023)",
+    "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
+    "Habitantes": "15 063 844 (Censo 2020)"
+  },
+  "Centro-País": {
+    "Estados": [
+      "Aguascalientes",
+      "Guanajuato",
+      "Querétaro",
+      "San Luis Potosí",
+      "Zacatecas",
+      "Estado de México",
+      "Ciudad de México"
+    ],
+    "Actividades-Economicas": "Servicios financieros, comercio, industria ligera y turismo de negocios",
+    "PIB": "7 941 809 millones MXN (2023)",
+    "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
+    "Habitantes": "40 607 763 (Censo 2020)"
+  },
+  "Oriente": {
+    "Estados": [
+      "Veracruz",
+      "Tabasco"
+    ],
+    "Actividades-Economicas": "Petróleo, petroquímica, puertos y agricultura de palma y cítricos",
+    "PIB": "3 188 478 millones MXN (2023)",
+    "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
+    "Habitantes": "10 465 177 (Censo 2020)"
+  },
+  "Sur": {
+    "Estados": [
+      "Chiapas",
+      "Guerrero",
+      "Oaxaca"
+    ],
+    "Actividades-Economicas": "Agricultura (café, maíz), turismo cultural y moda textil",
+    "PIB": "— dato no consolidado en la clasificación regional estándar —",
+    "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
+    "Habitantes": "13 216 661 (Censo 2020)"
+  },
+  "Sureste": {
+    "Estados": [
+      "Yucatán",
+      "Campeche",
+      "Quintana Roo"
+    ],
+    "Actividades-Economicas": "Turismo de playa, petróleo offshore y agricultura de henequén",
+    "PIB": "2 382 992 millones MXN (2023)",
+    "Sueldos-y-salarios": "8 364 MXN mensuales (Resto del país, 2025)",
+    "Habitantes": "5 107 246 (Censo 2020)"
   }
-  
+}
