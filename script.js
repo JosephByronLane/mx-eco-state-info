@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const mapObject = document.getElementById('map')
+    let jsonData;
 
+    loadJsonData().then(data =>{
+        jsonData = data
+    })
+    
+    
+    const mapObject = document.getElementById('map')
 
     mapObject.addEventListener('load', function(){
         const mapDoc = mapObject.contentDocument;
@@ -24,12 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error(`Couldn't find layer ${layer}. Check SVG layer namings.`);
                 return;
             }
-
             layer.addEventListener('mouseenter', showHoverElement)
             layer.addEventListener('mouseleave', hideHoverElement)
-        });
+        });   
         
-
     })
 
     function showHoverElement(event, data){
@@ -42,6 +46,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const layer = event.target
 
         layer.style.fill='rgba(255,255,255,1)'
+    }
+
+    async function loadJsonData(){
+        try{
+            const dataResponse = await fetch('data.json')
+            if (!dataResponse.ok){
+                throw new Error("Error fetching map's JSON data.")
+            }
+            const data = await dataResponse.json()
+
+            return data
+
+        }
+        catch(error){
+            console.error(`Error while loading JSON: ${error}`)
+        }
     }
 })
 
