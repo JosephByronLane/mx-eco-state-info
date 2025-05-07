@@ -42,3 +42,26 @@
 
 
 }
+
+.tooltip {
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 300px;
+    transition: opacity 0.2s ease;
+    pointer-events: none;   
+  }
+
+  .tooltip h3{
+    width: 100%;
+    border-bottom: 1px solid gray;
+  }
+  
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }

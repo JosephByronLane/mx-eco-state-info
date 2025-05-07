@@ -1,12 +1,27 @@
+let mouseX = 0
+let mouseY = 0
+
+const root = document.getElementById('root)')
+
+//hover getters for the tooltip info
+const tooltip = document.getElementById('region-tooltip');
+const tooltipTitle = document.getElementById('tooltip-title');
+const tooltipEstados = document.getElementById('tooltip-estados');
+const tooltipActividades = document.getElementById('tooltip-actividades');
+const tooltipPIB = document.getElementById('tooltip-pib');
+const tooltipSueldos = document.getElementById('tooltip-sueldos');
+const tooltipHabitantes = document.getElementById('tooltip-habitantes');
+
 document.addEventListener('DOMContentLoaded', function() {
 
+    //load json data to display in hover
     let jsonData;
 
     loadJsonData().then(data =>{
         jsonData = data
-    })
-    
-    
+    })    
+
+    //map hover stuff
     const mapObject = document.getElementById('map')
 
     mapObject.addEventListener('load', function(){
@@ -30,21 +45,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error(`Couldn't find layer ${layer}. Check SVG layer namings.`);
                 return;
             }
-            layer.addEventListener('mouseenter', showHoverElement)
+
+
+            layer.addEventListener('mouseenter', (event)=>{
+                showHoverElement(event, layer.id)
+            })
             layer.addEventListener('mouseleave', hideHoverElement)
         });   
         
     })
 
-    function showHoverElement(event, data){
+    function showHoverElement(event, layerId){
         const layer = event.target;
-    
+        const regionData = jsonData[layerId]
+
+        if (regionData == undefined){
+            console.error(`Error reading JSON data for ${layerId}. Check JSON formatting.`)
+            return;
+        }
+
+        console.log(`Data for ${layerId}`)
+        console.log(regionData)
+
+
+        tooltipTitle.textContent = layerId;
+        tooltipEstados.textContent = `Estados: ${regionData.Estados.join(', ')}`;
+        tooltipActividades.textContent = `Actividades Económicas: ${regionData["Actividades-Economicas"]}`;
+        tooltipPIB.textContent = `PIB: ${regionData.PIB}`;
+        tooltipSueldos.textContent = `Sueldos: ${regionData["Sueldos-y-salarios"]}`;
+        tooltipHabitantes.textContent = `Habitantes: ${regionData.Habitantes}`;
+        tooltip.classList.remove('hidden')
         layer.style.fill = 'rgba(255,0,0,1)'
     }
 
     function hideHoverElement(event, data){
         const layer = event.target
-
+        tooltip.classList.add('hidden')
         layer.style.fill='rgba(255,255,255,1)'
     }
 
@@ -63,5 +99,25 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error(`Error while loading JSON: ${error}`)
         }
     }
+
+    
 })
 
+//only used for updating the position of the infobox
+document.addEventListener('mousemove', (event) =>{
+    console.log("mouse move")
+    mouseX = event.clientX
+    mouseY = event.clientY
+
+
+    if (tooltip == undefined){
+        console.error(`tooltip is undefined. Not moving it.`)
+        return;
+    }
+
+    console.log("moved tooltip")
+    tooltip.style.left = `${mouseX + 15}px`
+    tooltip.style.top = `${mouseY + 15}px`
+
+    console.log(mouseX)
+})
