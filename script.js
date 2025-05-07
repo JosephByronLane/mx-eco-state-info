@@ -1,6 +1,7 @@
 let mouseX = 0
 let mouseY = 0
 
+const root = document.getElementById('root')
 
 //hover getters for the tooltip info
 const tooltip = document.getElementById('region-tooltip');
@@ -11,8 +12,15 @@ const tooltipPIB = document.getElementById('tooltip-pib');
 const tooltipSueldos = document.getElementById('tooltip-sueldos');
 const tooltipHabitantes = document.getElementById('tooltip-habitantes');
 
+
+//for some reason the bounding box doesn't take into account all the height differences
+//with the parent elements
+const pixelOffset = 20 + 80 + 35
+
 document.addEventListener('DOMContentLoaded', function() {
 
+
+    
     //load json data to display in hover
     let jsonData;
 
@@ -20,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         jsonData = data
     })    
 
-    //map hover stuff
     const mapObject = document.getElementById('map')
 
     mapObject.addEventListener('load', function(){
@@ -45,11 +52,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-
             layer.addEventListener('mouseenter', (event)=>{
                 showHoverElement(event, layer.id)
             })
+
             layer.addEventListener('mouseleave', hideHoverElement)
+            //visualizeBBox(layer)
+            
+            
+            //hover up scale transition
+            layer.style.transition = "transform 0.2s";
+
         });   
 
 
@@ -69,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         console.log(`Data for ${layerId}`)
-        console.log(regionData)
 
 
         tooltipTitle.textContent = layerId;
@@ -83,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tooltip.classList.remove('hidden')
         layer.style.fill = 'rgba(255,0,0,1)'
 
-        scaleElement(layer, 1.1)
+        scaleElement(layer, 1.05)
     }
 
     function hideHoverElement(event, data){
@@ -100,13 +112,51 @@ document.addEventListener('DOMContentLoaded', function() {
         //so we manually calculate the individual layer's center point and scale it from there
         const layerBbox = element.getBBox()
 
+        console.log(layerBbox)
+
         const cx = layerBbox.x + (layerBbox.height/2)
-        const cy = layerBbox.y + (layerBbox.width/2)
+        const cy = layerBbox.y + (layerBbox.width/2) - pixelOffset
 
         const transform = `translate(${cx}, ${cy}) scale(${scale}) translate(${-cx}, ${-cy})`;
         element.setAttribute('transform', transform);
+
+        //after applying the transform, it get saved to CSS with a scale of 1 (when hovering out)
+        //and it stops the element from updating, so we just remove it to not have to deal with it
+        element.style.removeProperty('transform')
         console.log(`set scale of ${element.id} to ${scale}`)
 
+    }
+
+    //debug function only, used to debug bboxes graphically
+    function visualizeBBox(element){
+        let dotsElements = []
+        const elementBBox = element.getBBox()
+
+        const dotLL = [elementBBox.x, elementBBox.y]
+        const dotLR = [elementBBox.x + elementBBox.width , elementBBox.y]
+        const dotUL = [elementBBox.x, elementBBox.y + elementBBox.height]
+        const dotUR = [elementBBox.x + elementBBox.width, elementBBox.y + elementBBox.height] 
+
+        const dotPos = [dotLL, dotLR, dotUL, dotUR]
+        const dotColors= ["red","blue","green","black"]
+        let i = 0
+        console.log(dotPos)
+        try{
+            dotPos.forEach(dotPosition => {
+                const dot = document.createElement("div")
+                dot.classList.add('dot')
+                dot.style.backgroundColor= dotColors[i]
+                dot.style.top =`${dotPosition[1]+ pixelOffset}px`
+                dot.style.left = `${dotPosition[0]}px`
+                root.appendChild(dot)
+                console.log("applied pos")
+                i = i+1
+            });
+        }catch(error){
+            console.error(error)
+        }
+
+                
     }
 
     async function loadJsonData(){
