@@ -78,14 +78,35 @@ document.addEventListener('DOMContentLoaded', function() {
         tooltipPIB.textContent = `PIB: ${regionData.PIB}`;
         tooltipSueldos.textContent = `Sueldos: ${regionData["Sueldos-y-salarios"]}`;
         tooltipHabitantes.textContent = `Habitantes: ${regionData.Habitantes}`;
+
+        
         tooltip.classList.remove('hidden')
         layer.style.fill = 'rgba(255,0,0,1)'
+
+        scaleElement(layer, 1.1)
     }
 
     function hideHoverElement(event, data){
         const layer = event.target
         tooltip.classList.add('hidden')
         layer.style.fill='rgba(255,255,255,1)'
+        layer.style.transform = `scale(1.0)`
+        scaleElement(layer, 1.0)
+    }
+
+    function scaleElement(element, scale){
+
+        //scaling the SVG makes it go from the svg's origin (0,0)
+        //so we manually calculate the individual layer's center point and scale it from there
+        const layerBbox = element.getBBox()
+
+        const cx = layerBbox.x + (layerBbox.height/2)
+        const cy = layerBbox.y + (layerBbox.width/2)
+
+        const transform = `translate(${cx}, ${cy}) scale(${scale}) translate(${-cx}, ${-cy})`;
+        element.setAttribute('transform', transform);
+        console.log(`set scale of ${element.id} to ${scale}`)
+
     }
 
     async function loadJsonData(){
@@ -110,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //only used for updating the position of the infobox
 document.addEventListener('mousemove', moveTooltip)
 function moveTooltip(event){
-    console.log("mouse move")
     mouseX = event.clientX
     mouseY = event.clientY
 
@@ -119,10 +139,8 @@ function moveTooltip(event){
         return;
     }
 
-    console.log("moved tooltip")
     tooltip.style.left = `${mouseX+50}px`
     tooltip.style.top = `${mouseY}px`
 
-    console.log(mouseX)
 
 }
