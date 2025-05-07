@@ -1,7 +1,6 @@
 let mouseX = 0
 let mouseY = 0
 
-const root = document.getElementById('root)')
 
 //hover getters for the tooltip info
 const tooltip = document.getElementById('region-tooltip');
@@ -52,8 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             layer.addEventListener('mouseleave', hideHoverElement)
         });   
+
+
+        mapDoc.addEventListener('mousemove', moveTooltip)
+
         
     })
+
 
     function showHoverElement(event, layerId){
         const layer = event.target;
@@ -104,11 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 //only used for updating the position of the infobox
-document.addEventListener('mousemove', (event) =>{
+document.addEventListener('mousemove', moveTooltip)
+function moveTooltip(event){
     console.log("mouse move")
     mouseX = event.clientX
     mouseY = event.clientY
-
 
     if (tooltip == undefined){
         console.error(`tooltip is undefined. Not moving it.`)
@@ -116,8 +120,9 @@ document.addEventListener('mousemove', (event) =>{
     }
 
     console.log("moved tooltip")
-    tooltip.style.left = `${mouseX + 15}px`
-    tooltip.style.top = `${mouseY + 15}px`
+    tooltip.style.left = `${mouseX+50}px`
+    tooltip.style.top = `${mouseY}px`
 
     console.log(mouseX)
-})
+
+}
