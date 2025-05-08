@@ -116,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
         //so we manually calculate the individual layer's center point and scale it from there
         const layerBbox = element.getBBox()
 
-        console.log(layerBbox)
 
         const cx = layerBbox.x + (layerBbox.height/2)
         const cy = layerBbox.y + (layerBbox.width/2) - pixelOffset
@@ -178,7 +177,7 @@ function visualizeBBox(elementBBox){
 //only used for updating the position of the infobox
 document.addEventListener('mousemove', moveTooltip)
 function moveTooltip(event){
-    const distanceFromMouseX = 50
+    const distanceFromMouseX = 350
 
     if (tooltip == undefined){
         console.error(`tooltip is undefined. Not moving it.`)
@@ -192,6 +191,7 @@ function moveTooltip(event){
     const viewportWidth = window.innerWidth -20;
     const viewportHeight = window.innerHeight - 20;
 
+    console.log(`Mouse position: ${event.clientX}, ${event.clientY}, Tooltip position: ${posX}, ${posY}`);
 
     if (posX + tooltipRect.width > viewportWidth) {
         posX = viewportWidth - tooltipRect.width ;

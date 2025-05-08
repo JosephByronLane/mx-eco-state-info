@@ -15,7 +15,7 @@
     justify-content: center;
     height: 7vh;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-
+    position: relative;
 }
 
 .title-icon{
@@ -34,7 +34,7 @@
     width: 80%;
     margin-inline: auto;
     padding: 7px;
-    outline: 1px solid grey;
+    outline: 1px solid rgb(214, 214, 214);
     border-radius: 10px;
     height: 35px;
     display: flex;
@@ -61,28 +61,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f1f1f1;
     height: 88vh;
 }
 .non-map{
     max-height: 135px;
 }
-.tooltip {
-    position: absolute;
-    z-index: 1000;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    width: 600px;
-    transition: opacity 0.2s ease;
-    pointer-events: none;   
-  }
 
-  .tooltip h3{
-    width: 100%;
-    border-bottom: 1px solid gray;
-  }
   
   .hidden {
     opacity: 0;
@@ -114,4 +99,54 @@
 
   .footer p{
     font-size: 1rem;
+  }
+
+  .tooltip-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+    padding: 10px
+  }
+
+  .tooltip-row:last-child{
+    border-bottom: none;
+  }
+
+  .tooltip-row i{
+    margin-right: 5px;
+    font-size: 1.2rem;
+    color: #061f57;
+  }
+
+  .tooltip-row p{
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .tooltip-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .tooltip-header h3{
+    font-size: 1.7rem;
+    font-weight: 600;
+    
+  }
+  .tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 600px;
+    transition: opacity 0.2s ease;
+    pointer-events: none;   
   }
