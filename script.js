@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
         tooltip.classList.remove('hidden')
-        layer.style.fill = 'rgba(255,0,0,1)'
+        layer.style.fill = '#061f57'
 
         scaleElement(layer, 1.05)
     }
@@ -190,11 +190,8 @@ function moveTooltip(event){
     let posX = event.clientX + distanceFromMouseX;
     let posY = event.clientY
     const viewportWidth = window.innerWidth -20;
-    const viewportHeight = window.innerHeightxx - 20;
+    const viewportHeight = window.innerHeight - 20;
 
-    console.log(viewportHeight)
-    console.log(posY)
-    console.log(posY + tooltipRect.height)
 
     if (posX + tooltipRect.width > viewportWidth) {
         posX = viewportWidth - tooltipRect.width ;
