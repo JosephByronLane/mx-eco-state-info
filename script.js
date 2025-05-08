@@ -22,14 +22,15 @@ let searchTerm = ""
 
 document.addEventListener('DOMContentLoaded', function() {
 
-
-    
     //load json data to display in hover
     let jsonData;
 
-    loadJsonData().then(data =>{
-        jsonData = data
-    })    
+    loadJsonData().then(data => {
+        jsonData = data;
+        console.log('Data loaded successfully');
+    }).catch(error => {
+        console.error('Failed to load data:', error);
+    });
 
     const mapObject = document.getElementById('map')
 
@@ -103,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function hideHoverElement(event, data){
         const layer = event.target
-        tooltip.classList.add('hidden')
-        layer.style.fill='rgba(255,255,255,1)'
+        //tooltip.classList.add('hidden')
+        layer.style.fill='rgb(255, 255, 255)'
         layer.style.transform = `scale(1.0)`
         scaleElement(layer, 1.0)
     }
@@ -129,36 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    //debug function only, used to debug bboxes graphically
-    function visualizeBBox(element){
-        let dotsElements = []
-        const elementBBox = element.getBBox()
-
-        const dotLL = [elementBBox.x, elementBBox.y]
-        const dotLR = [elementBBox.x + elementBBox.width , elementBBox.y]
-        const dotUL = [elementBBox.x, elementBBox.y + elementBBox.height]
-        const dotUR = [elementBBox.x + elementBBox.width, elementBBox.y + elementBBox.height] 
-
-        const dotPos = [dotLL, dotLR, dotUL, dotUR]
-        const dotColors= ["red","blue","green","black"]
-        let i = 0
-        try{
-            dotPos.forEach(dotPosition => {
-                const dot = document.createElement("div")
-                dot.classList.add('dot')
-                dot.style.backgroundColor= dotColors[i]
-                dot.style.top =`${dotPosition[1]+ pixelOffset}px`
-                dot.style.left = `${dotPosition[0]}px`
-                root.appendChild(dot)
-                i = i+1
-            });
-        }catch(error){
-            console.error(error)
-        }
-
-                
-    }
-
     async function loadJsonData(){
         try{
             const dataResponse = await fetch('data.json')
@@ -178,19 +149,63 @@ document.addEventListener('DOMContentLoaded', function() {
     
 })
 
+//debug function only, used to debug bboxes graphically
+function visualizeBBox(elementBBox){
+
+    const dotLL = [elementBBox.x, elementBBox.y]
+    const dotLR = [elementBBox.x + elementBBox.width , elementBBox.y]
+    const dotUL = [elementBBox.x, elementBBox.y + elementBBox.height]
+    const dotUR = [elementBBox.x + elementBBox.width, elementBBox.y + elementBBox.height] 
+
+    const dotPos = [dotLL, dotLR, dotUL, dotUR]
+    const dotColors= ["red","blue","green","black"]
+    let i = 0
+    try{
+        dotPos.forEach(dotPosition => {
+            const dot = document.createElement("div")
+            dot.classList.add('dot')
+            dot.style.backgroundColor= dotColors[i]
+            dot.style.top =`${dotPosition[1]+ pixelOffset}px`
+            dot.style.left = `${dotPosition[0]}px`
+            root.appendChild(dot)
+            i = i+1
+        });
+    }catch(error){
+        console.error(error)
+    }                
+}
+
 //only used for updating the position of the infobox
 document.addEventListener('mousemove', moveTooltip)
 function moveTooltip(event){
-    mouseX = event.clientX
-    mouseY = event.clientY
+    const distanceFromMouseX = 50
 
     if (tooltip == undefined){
         console.error(`tooltip is undefined. Not moving it.`)
         return;
     }
 
-    tooltip.style.left = `${mouseX+50}px`
-    tooltip.style.top = `${mouseY}px`
+    const tooltipRect = tooltip.getBoundingClientRect()
+
+    let posX = event.clientX + distanceFromMouseX;
+    let posY = event.clientY
+    const viewportWidth = window.innerWidth -20;
+    const viewportHeight = window.innerHeightxx - 20;
+
+    console.log(viewportHeight)
+    console.log(posY)
+    console.log(posY + tooltipRect.height)
+
+    if (posX + tooltipRect.width > viewportWidth) {
+        posX = viewportWidth - tooltipRect.width ;
+    }
+
+    if (posY + tooltipRect.height > viewportHeight){
+        posY = viewportHeight - tooltipRect.height
+    }
+    
+    tooltip.style.left = `${posX}px`;
+    tooltip.style.top = `${posY}px`;
 
 
 }

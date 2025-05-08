@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projecto</title>
+    <title>Zonas Geoeconómicas de México</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="root" id="root">
         <div class="title">
             <h1>Zonas Geoeconómicas de México</h1>
         </div>
-        <div class="search-bar">
+        <!-- <div class="search-bar">
             <input type="text" placeholder="Ingrese un estado" id="search-bar-input">
-        </div>
+        </div> -->
         <div class="map-container">
             <object data="/assets/map.svg" type="image/svg+xml" id="map">
                 Su navegador no soporta este mapa. Use otro navegador porfavor.
             </object>
         </div>
     </div>
-    <div id="region-tooltip" class="tooltip hidden">
+    <div id="region-tooltip" class="tooltip ">
         <h3 id="tooltip-title">asdfasdf</h3>
         <div id="tooltip-content">
           <p id="tooltip-estados">asdf</p>
@@ -34,7 +35,5 @@
         </div>
       </div>
 </body>
-<script src="script.js">
-
-</script>
 </html>
+<script src="script.js"></script>
