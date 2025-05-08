@@ -4,8 +4,7 @@
 }
 *{
     font-family: "Montserrat", sans-serif;
-    padding: 0;
-    margin: 0;
+
 }
 
 .title{
@@ -29,6 +28,9 @@
     outline: 1px solid grey;
     border-radius: 10px;
     height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-bar input{
@@ -43,9 +45,17 @@
 .map-container object{
     max-width: 100%;
 
-
 }
 
+.map-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.non-map{
+    max-height: 135px;
+}
 .tooltip {
     position: absolute;
     z-index: 1000;
@@ -54,7 +64,7 @@
     border-radius: 4px;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    max-width: 300px;
+    max-width: 50vw;
     transition: opacity 0.2s ease;
     pointer-events: none;   
   }

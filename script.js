@@ -17,6 +17,9 @@ const tooltipHabitantes = document.getElementById('tooltip-habitantes');
 //with the parent elements
 const pixelOffset = 20 + 80 + 35
 
+
+let searchTerm = ""
+
 document.addEventListener('DOMContentLoaded', function() {
 
 
@@ -123,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
         //after applying the transform, it get saved to CSS with a scale of 1 (when hovering out)
         //and it stops the element from updating, so we just remove it to not have to deal with it
         element.style.removeProperty('transform')
-        console.log(`set scale of ${element.id} to ${scale}`)
 
     }
 
@@ -140,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const dotPos = [dotLL, dotLR, dotUL, dotUR]
         const dotColors= ["red","blue","green","black"]
         let i = 0
-        console.log(dotPos)
         try{
             dotPos.forEach(dotPosition => {
                 const dot = document.createElement("div")
@@ -149,7 +150,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 dot.style.top =`${dotPosition[1]+ pixelOffset}px`
                 dot.style.left = `${dotPosition[0]}px`
                 root.appendChild(dot)
-                console.log("applied pos")
                 i = i+1
             });
         }catch(error){
