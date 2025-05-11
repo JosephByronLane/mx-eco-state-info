@@ -3,6 +3,9 @@ let mouseY = 0
 
 const root = document.getElementById('root')
 
+const regionInfo = document.getElementById('region-info')
+
+
 //hover getters for the tooltip info
 const tooltip = document.getElementById('region-tooltip');
 const tooltipTitle = document.getElementById('tooltip-title');
@@ -63,7 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
             layer.addEventListener('mouseleave', hideHoverElement)
             //visualizeBBox(layer)
             
-            
+            layer.addEventListener('click', (event)=>{
+                console.log(`Clicked on ${layer.id}`)
+            })
             //hover up scale transition
             layer.style.transition = "transform 0.2s";
 
@@ -71,6 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         mapDoc.addEventListener('mousemove', moveTooltip)
+
+
 
         
     })
@@ -87,24 +94,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log(`Data for ${layerId}`)
 
-
-        tooltipTitle.textContent = layerId;
-        tooltipEstados.textContent = `Estados: ${regionData.Estados.join(', ')}`;
-        tooltipActividades.textContent = `Actividades Económicas: ${regionData["Actividades-Economicas"]}`;
-        tooltipPIB.textContent = `PIB: ${regionData.PIB}`;
-        tooltipSueldos.textContent = `Sueldos: ${regionData["Sueldos-y-salarios"]}`;
-        tooltipHabitantes.textContent = `Habitantes: ${regionData.Habitantes}`;
-
         
-        tooltip.classList.remove('hidden')
-        layer.style.fill = '#061f57'
+        tooltipTitle.textContent = layerId;
+        updateTooltipInfo(regionData)
 
         scaleElement(layer, 1.05)
     }
 
     function hideHoverElement(event, data){
         const layer = event.target
-        //tooltip.classList.add('hidden')
+        tooltip.classList.add('hidden')
         layer.style.fill='rgb(255, 255, 255)'
         layer.style.transform = `scale(1.0)`
         scaleElement(layer, 1.0)
@@ -143,10 +142,50 @@ document.addEventListener('DOMContentLoaded', function() {
         catch(error){
             console.error(`Error while loading JSON: ${error}`)
         }
-    }
+    }    
+
+
+})
+
+function updateTooltipInfo(regionData){
+    const estadoNames = regionData.Estados ? Object.keys(regionData.Estados) : [];
+    tooltipEstados.textContent = `Estados: ${estadoNames.join(', ')}`;
+    
+    tooltipActividades.textContent = `Actividades Económicas: ${regionData["Actividades-Economicas"]}`;
+    tooltipPIB.textContent = `PIB: ${regionData.PIB}`;
+    tooltipSueldos.textContent = `Sueldos: ${regionData["Sueldos-y-salarios"]}`;
+    tooltipHabitantes.textContent = `Habitantes: ${regionData.Habitantes}`;
 
     
-})
+    tooltip.classList.remove('hidden')
+    layer.style.fill = '#061f57'
+}
+
+function createStateInfo(regionData){
+    const stateInfo = document.createElement('div')
+    stateInfo.classList.add('state-info')
+
+    const stateName = document.createElement('h3')
+    stateName.textContent = regionData.name
+
+    const stateActividades = document.createElement('p')
+    stateActividades.textContent = regionData["Actividades-Economicas"]
+
+    const statePIB = document.createElement('p')
+    statePIB.textContent = parseString(regionData["PIB"])
+
+    const stateSueldos = document.createElement('p')
+    stateSueldos.textContent = parseString(regionData["Sueldos-y-salarios"])
+
+    const stateHabitantes = document.createElement('p')
+    stateHabitantes.textContent = parseString(regionData.Habitantes)
+
+    stateInfo.appendChild(stateName)
+    stateInfo.appendChild(stateActividades)
+    stateInfo.appendChild(statePIB)
+    stateInfo.appendChild(stateSueldos)
+    stateInfo.appendChild(stateHabitantes)    
+}
 
 //debug function only, used to debug bboxes graphically
 function visualizeBBox(elementBBox){
@@ -190,8 +229,6 @@ function moveTooltip(event){
     let posY = event.clientY
     const viewportWidth = window.innerWidth -20;
     const viewportHeight = window.innerHeight - 20;
-
-    console.log(`Mouse position: ${event.clientX}, ${event.clientY}, Tooltip position: ${posX}, ${posY}`);
 
     if (posX + tooltipRect.width > viewportWidth) {
         posX = viewportWidth - tooltipRect.width ;
