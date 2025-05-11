@@ -4,6 +4,9 @@ let mouseY = 0
 const root = document.getElementById('root')
 
 const regionInfo = document.getElementById('region-info')
+const panelContent = document.getElementById('panel-content')
+const closePanel = document.getElementById('close-panel')
+const panelTitle = document.getElementById('panel-title')
 
 //hover getters for the tooltip info
 const tooltip = document.getElementById('region-tooltip');
@@ -149,6 +152,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
+closePanel.addEventListener('click', () => {
+    regionInfo.classList.remove('active');
+});
+
 function showRegionInfo(event, layerId){
 
     const selectedRegion = jsonData[layerId]
@@ -158,15 +165,16 @@ function showRegionInfo(event, layerId){
 
     console.log(regionStates)
 
-    regionInfo.innerHTML = '';
+    panelContent.innerHTML = '';
+    panelTitle.textContent = `Región: ${layerId}`;
 
     for (const stateName in regionStates){
         const stateData = regionStates[stateName];
         createStateInfo(stateName, stateData);
     }
+    
+    regionInfo.classList.add('active');
 }
-
-
 
 function createStateInfo(stateName, stateData){
 
@@ -196,7 +204,7 @@ function createStateInfo(stateName, stateData){
     stateInfo.appendChild(stateSueldos)
     stateInfo.appendChild(stateHabitantes)    
 
-    regionInfo.appendChild(stateInfo)
+    panelContent.appendChild(stateInfo)
 }
 
 //debug function only, used to debug bboxes graphically
