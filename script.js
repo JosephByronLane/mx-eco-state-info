@@ -5,7 +5,6 @@ const root = document.getElementById('root')
 
 const regionInfo = document.getElementById('region-info')
 
-
 //hover getters for the tooltip info
 const tooltip = document.getElementById('region-tooltip');
 const tooltipTitle = document.getElementById('tooltip-title');
@@ -20,13 +19,13 @@ const tooltipHabitantes = document.getElementById('tooltip-habitantes');
 //with the parent elements
 const pixelOffset = 20 + 80 + 35
 
+let jsonData;
 
 let searchTerm = ""
 
 document.addEventListener('DOMContentLoaded', function() {
 
     //load json data to display in hover
-    let jsonData;
 
     loadJsonData().then(data => {
         jsonData = data;
@@ -67,21 +66,17 @@ document.addEventListener('DOMContentLoaded', function() {
             //visualizeBBox(layer)
             
             layer.addEventListener('click', (event)=>{
-                console.log(`Clicked on ${layer.id}`)
+                showRegionInfo(event, layer.id)
             })
+
             //hover up scale transition
             layer.style.transition = "transform 0.2s";
 
         });   
 
 
-        mapDoc.addEventListener('mousemove', moveTooltip)
-
-
-
-        
+        mapDoc.addEventListener('mousemove', moveTooltip)        
     })
-
 
     function showHoverElement(event, layerId){
         const layer = event.target;
@@ -92,12 +87,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        console.log(`Data for ${layerId}`)
-
         
         tooltipTitle.textContent = layerId;
-        updateTooltipInfo(regionData)
 
+        const estadoNames = regionData.Estados ? Object.keys(regionData.Estados) : [];
+        tooltipEstados.textContent = `Estados: ${estadoNames.join(', ')}`;
+        
+        tooltipActividades.textContent = `Actividades Económicas: ${regionData["Actividades-Economicas"]}`;
+        tooltipPIB.textContent = `PIB: ${regionData.PIB}`;
+        tooltipSueldos.textContent = `Sueldos: ${regionData["Sueldos-y-salarios"]}`;
+        tooltipHabitantes.textContent = `Habitantes: ${regionData.Habitantes}`;    
+        
+        tooltip.classList.remove('hidden')
+        layer.style.fill = '#061f57'
         scaleElement(layer, 1.05)
     }
 
@@ -147,44 +149,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
-function updateTooltipInfo(regionData){
-    const estadoNames = regionData.Estados ? Object.keys(regionData.Estados) : [];
-    tooltipEstados.textContent = `Estados: ${estadoNames.join(', ')}`;
-    
-    tooltipActividades.textContent = `Actividades Económicas: ${regionData["Actividades-Economicas"]}`;
-    tooltipPIB.textContent = `PIB: ${regionData.PIB}`;
-    tooltipSueldos.textContent = `Sueldos: ${regionData["Sueldos-y-salarios"]}`;
-    tooltipHabitantes.textContent = `Habitantes: ${regionData.Habitantes}`;
+function showRegionInfo(event, layerId){
 
-    
-    tooltip.classList.remove('hidden')
-    layer.style.fill = '#061f57'
+    const selectedRegion = jsonData[layerId]
+    console.log(selectedRegion)
+
+    const regionStates = selectedRegion.Estados
+
+    console.log(regionStates)
+
+    regionInfo.innerHTML = '';
+
+    for (const stateName in regionStates){
+        const stateData = regionStates[stateName];
+        createStateInfo(stateName, stateData);
+    }
 }
 
-function createStateInfo(regionData){
+
+
+function createStateInfo(stateName, stateData){
+
+    console.log(`Creating state info for ${stateName}`)
+
     const stateInfo = document.createElement('div')
     stateInfo.classList.add('state-info')
 
-    const stateName = document.createElement('h3')
-    stateName.textContent = regionData.name
+    const stateNameEl = document.createElement('h3')
+    stateNameEl.textContent = stateName
 
     const stateActividades = document.createElement('p')
-    stateActividades.textContent = regionData["Actividades-Economicas"]
+    stateActividades.textContent = `Actividades Económicas: ${stateData["Actividades-Economicas"]}`
 
     const statePIB = document.createElement('p')
-    statePIB.textContent = parseString(regionData["PIB"])
+    statePIB.textContent = `PIB: ${stateData["PIB"]}`
 
     const stateSueldos = document.createElement('p')
-    stateSueldos.textContent = parseString(regionData["Sueldos-y-salarios"])
+    stateSueldos.textContent = `Sueldos y salarios: ${stateData["Sueldos-y-salarios"]}`
 
     const stateHabitantes = document.createElement('p')
-    stateHabitantes.textContent = parseString(regionData.Habitantes)
+    stateHabitantes.textContent = `Habitantes: ${stateData["Habitantes"]}`
 
-    stateInfo.appendChild(stateName)
+    stateInfo.appendChild(stateNameEl)
     stateInfo.appendChild(stateActividades)
     stateInfo.appendChild(statePIB)
     stateInfo.appendChild(stateSueldos)
     stateInfo.appendChild(stateHabitantes)    
+
+    regionInfo.appendChild(stateInfo)
 }
 
 //debug function only, used to debug bboxes graphically
