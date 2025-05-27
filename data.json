@@ -1,48 +1,26 @@
 {
-  "Noroeste": {
-    "Estados": {
-      "Baja California": {
-        "Actividades-Economicas": "Industria manufacturera, comercio fronterizo, pesca, turismo",
-        "PIB": 539000,
-        "Sueldos-y-salarios": 9000,
-        "Habitantes": 3769020
-      },
-      "Baja California Sur": {
-        "Actividades-Economicas": "Turismo, pesca, servicios portuarios",
-        "PIB": 156000,
-        "Sueldos-y-salarios": 8500,
-        "Habitantes": 798447
-      },
-      "Chihuahua": {
-        "Actividades-Economicas": "Maquila, minería, ganadería",
-        "PIB": 499000,
-        "Sueldos-y-salarios": 8800,
-        "Habitantes": 3741869
-      },
-      "Durango": {
-        "Actividades-Economicas": "Minería, agricultura, manufactura ligera",
-        "PIB": 165000,
-        "Sueldos-y-salarios": 8200,
-        "Habitantes": 1832650
-      },
-      "Sinaloa": {
-        "Actividades-Economicas": "Agricultura de riego, pesca, agroindustria",
-        "PIB": 415000,
-        "Sueldos-y-salarios": 8600,
-        "Habitantes": 3026943
-      },
-      "Sonora": {
-        "Actividades-Economicas": "Minas, ganadería, agricultura, maquila",
-        "PIB": 457000,
-        "Sueldos-y-salarios": 8900,
-        "Habitantes": 2944840
-      }
+"Noroeste": {
+  "Estados": {
+    "Coahuila": {
+      "Actividades-Economicas": "Industria Manufacturera, Servicios Profesionales, Financieros y corporativos",
+      "PIB": 4.1,
+      "Sueldos-y-salarios": 11412.67,
+      "Habitantes": 3146771
     },
-    "Actividades-Economicas": "Manufactura, minería, agricultura, comercio fronterizo y turismo.",
-    "PIB": 2232000,
-    "Sueldos-y-salarios": 8750,
-    "Habitantes": 16175769
-  },
+    "Nuevo-León": {
+      "Actividades-Economicas": "Industria Manufacturera, Comercio, Construcción y Servicios inmobiliarios",
+      "PIB": 7.9,
+      "Sueldos-y-salarios": 9820,
+      "Habitantes": 5784442
+    },
+    "Tamaulipas": {
+      "Actividades-Economicas": "Industria Manufacturera, Comercio, Transporte y almacenamiento, Agroindustrial",
+      "PIB": 3.0,
+      "Sueldos-y-salarios": 8470,
+      "Habitantes": 3527735
+    }
+  }
+},
   "Noreste": {
     "Estados": {
       "Coahuila": {
@@ -151,25 +129,29 @@
     "Sueldos-y-salarios": 9400,
     "Habitantes": 41523802
   },
-  "Oriente": {
+"Oriente": {
     "Estados": {
-      "Veracruz": {
-        "Actividades-Economicas": "Petroquímica, agroindustria, puertos marítimos",
-        "PIB": 757000,
-        "Sueldos-y-salarios": 8300,
-        "Habitantes": 8062579
-      },
-      "Tabasco": {
-        "Actividades-Economicas": "Petróleo y gas, agricultura, turismo ecológico",
-        "PIB": 454000,
-        "Sueldos-y-salarios": 8200,
-        "Habitantes": 2395272
-      }
-    },
-    "Actividades-Economicas": "Energía, agroindustria y logística portuaria.",
-    "PIB": 1211000,
-    "Sueldos-y-salarios": 8250,
-    "Habitantes": 10457851
+		"Veracruz": {
+			"Actividades-Economicas": "Comercios, Construcción, Industria del plástico y de hule",
+			"PIB": "1,067,881 MDP",
+			"Sueldos-y-salarios": "7,433 mensuales",
+			"Habitantes": "8,062,579"
+		},
+		"Tabasco": {
+			"Actividades-Economicas": "Minería petrolera, Agricultura, Comercio",
+			"PIB": "767 010 MDP",
+			"Sueldos-y-salarios": "6,550 mensuales",
+			"Habitantes": "2,402,598"
+		}
+	},
+    "Actividades-Economicas": "Comercios, Míneria petrolera, Agricultura, Construcción, Industria del plástico y de hule",
+    "PIB": "1,834,891 MDP",
+    "Sueldos-y-salarios": "6,992 mensuales",
+    "Habitantes":"10,465,177",
+    "alumnos":[
+      "charlie",
+      "angel"
+    ]
   },
   "Sur": {
     "Estados": {
