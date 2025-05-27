@@ -1,51 +1,77 @@
 {
 "Noroeste": {
   "Estados": {
-    "Coahuila": {
-      "Actividades-Economicas": "Industria Manufacturera, Servicios Profesionales, Financieros y corporativos",
-      "PIB": 4.1,
-      "Sueldos-y-salarios": 11412.67,
-      "Habitantes": 3146771
+    "Baja California": {
+      "Actividades-Economicas": "Industria manufacturera orientada a la exportación (maquiladoras, electrónica, automotriz):contentReference[oaicite:0]{index=0}, comercio transfronterizo y servicios.",
+      "PIB": 1249623000000,
+      "Sueldos-y-salarios": 8230,
+      "Habitantes": 3769020
     },
-    "Nuevo-León": {
-      "Actividades-Economicas": "Industria Manufacturera, Comercio, Construcción y Servicios inmobiliarios",
-      "PIB": 7.9,
-      "Sueldos-y-salarios": 9820,
-      "Habitantes": 5784442
+    "Baja California Sur": {
+      "Actividades-Economicas": "Sector servicios (turismo) y actividades primarias como pesca, agricultura y minería:contentReference[oaicite:1]{index=1}:contentReference[oaicite:2]{index=2}.",
+      "PIB": 235778000000,
+      "Sueldos-y-salarios": 12000,
+      "Habitantes": 798447
     },
-    "Tamaulipas": {
-      "Actividades-Economicas": "Industria Manufacturera, Comercio, Transporte y almacenamiento, Agroindustrial",
-      "PIB": 3.0,
-      "Sueldos-y-salarios": 8470,
-      "Habitantes": 3527735
+    "Chihuahua": {
+      "Actividades-Economicas": "Fuerte sector manufacturero maquilador (electrónica, automotriz, aeroespacial):contentReference[oaicite:3]{index=3}, minería (oro, plata, cobre):contentReference[oaicite:4]{index=4}, comercio y turismo de naturaleza (Sierra Tarahumara):contentReference[oaicite:5]{index=5}.",
+      "PIB": 1233960000000,
+      "Sueldos-y-salarios": 8430,
+      "Habitantes": 3741869
+    },
+    "Durango": {
+      "Actividades-Economicas": "Industria manufacturera (autopartes, textil) y sector minero:contentReference[oaicite:6]{index=6}; además agricultura (maíz, frijol) y ganadería:contentReference[oaicite:7]{index=7}.",
+      "PIB": 411813000000,
+      "Sueldos-y-salarios": 7520,
+      "Habitantes": 1832650
+    },
+    "Sinaloa": {
+      "Actividades-Economicas": "Predominan la agricultura (maíz, trigo, hortalizas), la pesca (especialmente camarón y atún) y la ganadería, con industria alimentaria asociada.",
+      "PIB": 691620000000,
+      "Sueldos-y-salarios": 8330,
+      "Habitantes": 3026943
+    },
+    "Sonora": {
+      "Actividades-Economicas": "Minería (cobre, oro, plata), agricultura (trigo, maíz, vid) y ganadería, así como manufactura (alimentos, autopartes) en maquiladoras:contentReference[oaicite:8]{index=8}.",
+      "PIB": 1067770000000,
+      "Sueldos-y-salarios": 8110,
+      "Habitantes": 2944840
     }
-  }
+  },
+  "Actividades-Economicas": "Zona caracterizada por industria manufacturera (maquiladora) y minería, además de agricultura, pesca, turismo y comercio fronterizo:contentReference[oaicite:9]{index=9}:contentReference[oaicite:10]{index=10}.",
+  "PIB": 4890564000000,
+  "Sueldos-y-salarios": 8770,
+  "Habitantes": 16113769
 },
   "Noreste": {
     "Estados": {
       "Coahuila": {
-        "Actividades-Economicas": "Acero, minería, energía, industria automotriz",
-        "PIB": 626000,
-        "Sueldos-y-salarios": 9100,
+        "Actividades-Economicas": "Industria Manufacturera, Servicios Profesionales, Financieros y corporativos",
+        "PIB": 4.1,
+        "Sueldos-y-salarios": 11412.67,
         "Habitantes": 3146771
       },
-      "Nuevo León": {
-        "Actividades-Economicas": "Industria pesada, servicios financieros, manufactura",
-        "PIB": 1425000,
-        "Sueldos-y-salarios": 9500,
+      "Nuevo-León": {
+        "Actividades-Economicas": "Industria Manufacturera, Comercio, Construcción y Servicios inmobiliarios",
+        "PIB": 7.9,
+        "Sueldos-y-salarios": 9820,
         "Habitantes": 5784442
       },
       "Tamaulipas": {
-        "Actividades-Economicas": "Petroquímica, agricultura, logística portuaria",
-        "PIB": 580000,
-        "Sueldos-y-salarios": 9000,
+        "Actividades-Economicas": "Industria Manufacturera, Comercio, Transporte y almacenamiento, Agroindustrial",
+        "PIB": 3.0,
+        "Sueldos-y-salarios": 8470,
         "Habitantes": 3527735
       }
     },
-    "Actividades-Economicas": "Industria pesada, energía, manufactura y comercio internacional.",
-    "PIB": 2637000,
-    "Sueldos-y-salarios": 9200,
-    "Habitantes": 12458948
+    "Actividades-Economicas": "Inudstria Manufacturera, Metal-mecánica, Agroindustria, Servicios",
+    "PIB": 14.66,
+    "Sueldos-y-salarios": 12596,
+    "Habitantes": 12997278,
+    "alumnos": [
+      "vela",
+      "???????"
+    ]
   },
   "Occidente": {
     "Estados": {
