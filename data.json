@@ -205,30 +205,35 @@
     "Sueldos-y-salarios": 7200,
     "Habitantes": 13237761
   },
-  "Sureste": {
+"Sureste": {
     "Estados": {
-      "Yucatán": {
-        "Actividades-Economicas": "Turismo arqueológico, agroindustria, servicios",
-        "PIB": 190000,
-        "Sueldos-y-salarios": 7800,
-        "Habitantes": 2320898
+      "Yucatan": {
+        "Actividades-Economicas": "Turismo, agricultura (maíz, henequén), industria manufacturera, tecnologías de la información, servicios.",
+        "PIB": 158700,
+        "Sueldos-y-salarios": 10205,
+        "Habitantes": 2320900
       },
       "Campeche": {
-        "Actividades-Economicas": "Petróleo offshore, pesca, turismo",
-        "PIB": 144000,
-        "Sueldos-y-salarios": 7600,
-        "Habitantes": 928363
+        "Actividades-Economicas": "Extracción de petróleo y gas, pesca, agricultura (maíz, arroz), servicios públicos y gubernamentales.",
+        "PIB": 534889,
+        "Sueldos-y-salarios": 11336,
+        "Habitantes": 928000
       },
       "Quintana Roo": {
-        "Actividades-Economicas": "Turismo de sol y playa, servicios hoteleros",
-        "PIB": 256000,
-        "Sueldos-y-salarios": 8000,
-        "Habitantes": 1857985
+        "Actividades-Economicas": "Turismo (principal motor económico), construcción, comercio, servicios financieros e inmobiliarios.",
+        "PIB": 199933,
+        "Sueldos-y-salarios": 12013,
+        "Habitantes": 1970000
       }
     },
-    "Actividades-Economicas": "Turismo de alta demanda, petróleo y servicios.",
-    "PIB": 590000,
-    "Sueldos-y-salarios": 7800,
-    "Habitantes": 5107246
-  }
+    "Actividades-Economicas": "Turismo, Extracción de petróleo y gas, agricultura, comercio, pesca",
+    "PIB": "893,522",
+    "Sueldos-y-salarios": "33,554",
+    "Habitantes": "5,218,900"
+  },
+  "alumnos": [
+    "diego",
+    "joahn",
+    "abraham"
+  ]
 }
