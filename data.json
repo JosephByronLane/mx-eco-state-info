@@ -111,7 +111,7 @@
       "rihani"
     ]
  },
-"Centro-País": {
+"Centro": {
   "Estados": {
     "Aguascalientes": {
       "Actividades-Economicas": "Industria manufacturera (automotriz), servicios, comercio.",
@@ -263,9 +263,20 @@
         "PIB": 80000000000,
         "Sueldos-y-salarios": 7000,
         "Habitantes": 2000000
+      },
+      "Puebla": {
+        "Actividades-Economicas": "Industria automotriz, textil, agroindustria (mole poblano), comercio y servicios.",
+        "PIB": 300000000000,
+        "Sueldos-y-salarios": 7500,
+        "Habitantes": 6000000
+      },
+      "Hidalgo": {
+        "Actividades-Economicas": "Industria automotriz, minería (carbón, plata), agricultura (cereales, hortalizas), comercio.",
+        "PIB": 150000000000,
+        "Sueldos-y-salarios": 7200,
+        "Habitantes": 3000000
       }
     },
-    
     "Actividades-Economicas": "Industria textil, agroindustria, turismo, comercio y servicios.",
     "PIB": 130000000000,
     "Sueldos-y-salarios": 6500,
