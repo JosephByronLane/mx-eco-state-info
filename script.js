@@ -47,8 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        //the svg exports each layer as a separate <path> attribute.
-        const automatedLayers = mapDoc.querySelectorAll('path')
+        //the svg contains multiple <g> elements, each representing a region in the className
+        const allGroups = mapDoc.querySelectorAll('g');
+        const automatedLayers = Array.from(allGroups).filter(group => {
+            return group.className && group.className.baseVal && group.className.baseVal.trim() !== '';
+        });
+        
+        // originally the code expected ID's in the <path>, but due to classmates doing everything at the last moment 
+        // and using separate softwares, the regions ended up being classNAmes inside of <g> elements
+        automatedLayers.forEach(group => {
+            if (!group.id && group.className.baseVal) {
+            group.id = group.className.baseVal;
+            }
+        });
 
         if (automatedLayers === undefined) {
             console.error("Error finding SVG layers. Please check output data format.")

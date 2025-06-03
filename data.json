@@ -2,25 +2,25 @@
 "Noroeste": {
   "Estados": {
     "Baja California": {
-      "Actividades-Economicas": "Industria manufacturera orientada a la exportación (maquiladoras, electrónica, automotriz):contentReference[oaicite:0]{index=0}, comercio transfronterizo y servicios.",
+      "Actividades-Economicas": "Industria manufacturera orientada a la exportación (maquiladoras, electrónica, automotriz), comercio transfronterizo y servicios.",
       "PIB": 1249623000000,
       "Sueldos-y-salarios": 8230,
       "Habitantes": 3769020
     },
     "Baja California Sur": {
-      "Actividades-Economicas": "Sector servicios (turismo) y actividades primarias como pesca, agricultura y minería:contentReference[oaicite:1]{index=1}:contentReference[oaicite:2]{index=2}.",
+      "Actividades-Economicas": "Sector servicios (turismo) y actividades primarias como pesca, agricultura y minería.",
       "PIB": 235778000000,
       "Sueldos-y-salarios": 12000,
       "Habitantes": 798447
     },
     "Chihuahua": {
-      "Actividades-Economicas": "Fuerte sector manufacturero maquilador (electrónica, automotriz, aeroespacial):contentReference[oaicite:3]{index=3}, minería (oro, plata, cobre):contentReference[oaicite:4]{index=4}, comercio y turismo de naturaleza (Sierra Tarahumara):contentReference[oaicite:5]{index=5}.",
+      "Actividades-Economicas": "Fuerte sector manufacturero maquilador (electrónica, automotriz, aeroespacial), minería (oro, plata, cobre), comercio y turismo de naturaleza (Sierra Tarahumara).",
       "PIB": 1233960000000,
       "Sueldos-y-salarios": 8430,
       "Habitantes": 3741869
     },
     "Durango": {
-      "Actividades-Economicas": "Industria manufacturera (autopartes, textil) y sector minero:contentReference[oaicite:6]{index=6}; además agricultura (maíz, frijol) y ganadería:contentReference[oaicite:7]{index=7}.",
+      "Actividades-Economicas": "Industria manufacturera (autopartes, textil) y sector minero; además agricultura (maíz, frijol) y ganadería.",
       "PIB": 411813000000,
       "Sueldos-y-salarios": 7520,
       "Habitantes": 1832650
@@ -32,16 +32,19 @@
       "Habitantes": 3026943
     },
     "Sonora": {
-      "Actividades-Economicas": "Minería (cobre, oro, plata), agricultura (trigo, maíz, vid) y ganadería, así como manufactura (alimentos, autopartes) en maquiladoras:contentReference[oaicite:8]{index=8}.",
+      "Actividades-Economicas": "Minería (cobre, oro, plata), agricultura (trigo, maíz, vid) y ganadería, así como manufactura (alimentos, autopartes) en maquiladoras.",
       "PIB": 1067770000000,
       "Sueldos-y-salarios": 8110,
       "Habitantes": 2944840
     }
   },
-  "Actividades-Economicas": "Zona caracterizada por industria manufacturera (maquiladora) y minería, además de agricultura, pesca, turismo y comercio fronterizo:contentReference[oaicite:9]{index=9}:contentReference[oaicite:10]{index=10}.",
+  "Actividades-Economicas": "Zona caracterizada por industria manufacturera (maquiladora) y minería, además de agricultura, pesca, turismo y comercio fronterizo.",
   "PIB": 4890564000000,
   "Sueldos-y-salarios": 8770,
-  "Habitantes": 16113769
+  "Habitantes": 16113769,
+  "alumnos": [
+    "vela"
+  ]
 },
   "Noreste": {
     "Estados": {
@@ -69,92 +72,98 @@
     "Sueldos-y-salarios": 12596,
     "Habitantes": 12997278,
     "alumnos": [
-      "vela",
-      "???????"
+      "osva",
+      "adal"
     ]
   },
   "Occidente": {
     "Estados": {
       "Colima": {
-        "Actividades-Economicas": "Puerto, minería, agricultura tropical",
-        "PIB": 83000,
-        "Sueldos-y-salarios": 8200,
-        "Habitantes": 731391
+        "Actividades-Economicas": "Servicios portuarios (Puerto de Manzanillo), comercio, turismo, agricultura (limón, coco), minería.",
+        "PIB": 150000000000,
+        "Sueldos-y-salarios": 9700,
+        "Habitantes": 750000
       },
       "Jalisco": {
-        "Actividades-Economicas": "Electrónica, software, agroindustria, turismo",
-        "PIB": 1359000,
-        "Sueldos-y-salarios": 8800,
-        "Habitantes": 8348151
+        "Actividades-Economicas": "Industria tecnológica (Guadalajara), agroindustria (tequila, berries), comercio, turismo, servicios financieros.",
+        "PIB": 2000000000000,
+        "Sueldos-y-salarios": 11500,
+        "Habitantes": 8600000
       },
       "Michoacán": {
-        "Actividades-Economicas": "Agroindustria, minería, turismo cultural",
-        "PIB": 425000,
-        "Sueldos-y-salarios": 8000,
-        "Habitantes": 4748846
+        "Actividades-Economicas": "Agricultura (aguacate, berries), minería, turismo cultural, comercio.",
+        "PIB": 680000000000,
+        "Sueldos-y-salarios": 8400,
+        "Habitantes": 5000000
       },
       "Nayarit": {
-        "Actividades-Economicas": "Turismo de playa, agricultura de exportación",
-        "PIB": 134000,
-        "Sueldos-y-salarios": 8300,
-        "Habitantes": 1547314
-      }
-    },
-    "Actividades-Economicas": "Manufactura avanzada, agroindustria y turismo costero.",
-    "PIB": 2004300,
-    "Sueldos-y-salarios": 8325,
-    "Habitantes": 15172602
-  },
-  "Centro": {
-    "Estados": {
-      "Aguascalientes": {
-        "Actividades-Economicas": "Automotriz, servicios, energías renovables",
-        "PIB": 163000,
-        "Sueldos-y-salarios": 9400,
-        "Habitantes": 1434635
-      },
-      "Guanajuato": {
-        "Actividades-Economicas": "Automotriz, agroindustria, turismo",
-        "PIB": 642000,
-        "Sueldos-y-salarios": 9000,
-        "Habitantes": 6166014
-      },
-      "Querétaro": {
-        "Actividades-Economicas": "Aeroespacial, manufactura de alta tecnología",
-        "PIB": 469000,
-        "Sueldos-y-salarios": 9800,
-        "Habitantes": 2368467
-      },
-      "San Luis Potosí": {
-        "Actividades-Economicas": "Automotriz, industria química, minería",
-        "PIB": 334000,
-        "Sueldos-y-salarios": 8900,
-        "Habitantes": 2822255
-      },
-      "Zacatecas": {
-        "Actividades-Economicas": "Minería, agricultura, turismo rural",
-        "PIB": 174000,
-        "Sueldos-y-salarios": 8000,
-        "Habitantes": 1622138
-      },
-      "Estado de México": {
-        "Actividades-Economicas": "Manufactura, comercio, servicios logísticos",
-        "PIB": 3340000,
+        "Actividades-Economicas": "Turismo (Riviera Nayarit), pesca, agricultura (tabaco, caña), ganadería.",
+        "PIB": 210000000000,
         "Sueldos-y-salarios": 8800,
-        "Habitantes": 17486149
-      },
-      "Ciudad de México": {
-        "Actividades-Economicas": "Finanzas, servicios profesionales, turismo urbano",
-        "PIB": 5772000,
-        "Sueldos-y-salarios": 10500,
-        "Habitantes": 9209944
+        "Habitantes": 1400000
       }
     },
-    "Actividades-Economicas": "Sector servicios de alto valor, manufactura y finanzas.",
-    "PIB": 10894000,
-    "Sueldos-y-salarios": 9400,
-    "Habitantes": 41523802
+    "Actividades-Economicas": "Industria tecnológica, agricultura, turismo, comercio, servicios portuarios y financieros.",
+    "PIB": 3040000000000,
+    "Sueldos-y-salarios": 9617,
+    "Habitantes":15750000,
+    "alumnos": [
+      "rihani"
+    ]
+ },
+"Centro-País": {
+  "Estados": {
+    "Aguascalientes": {
+      "Actividades-Economicas": "Industria manufacturera (automotriz), servicios, comercio.",
+      "PIB": 902651,
+      "Sueldos-y-salarios": 62000,
+      "Habitantes": 1425607
+    },
+    "Guanajuato": {
+      "Actividades-Economicas": "Industria automotriz, manufactura, agroindustria, comercio.",
+      "PIB": 1082329,
+      "Sueldos-y-salarios": 65000,
+      "Habitantes": 6166934
+    },
+    "Querétaro": {
+      "Actividades-Economicas": "Industria aeronáutica, manufactura, tecnologías de la información.",
+      "PIB": 1049834,
+      "Sueldos-y-salarios": 68000,
+      "Habitantes": 2368467
+    },
+    "San Luis Potosí": {
+      "Actividades-Economicas": "Manufactura, industria automotriz, logística y comercio.",
+      "PIB": 1034560,
+      "Sueldos-y-salarios": 60000,
+      "Habitantes": 2822255
+    },
+    "Zacatecas": {
+      "Actividades-Economicas": "Minería (plata), agricultura, ganadería.",
+      "PIB": 313577,
+      "Sueldos-y-salarios": 58000,
+      "Habitantes": 1622138
+    },
+    "Estado de México": {
+      "Actividades-Economicas": "Manufactura, comercio, servicios, industria alimentaria.",
+      "PIB": 2577033,
+      "Sueldos-y-salarios": 70000,
+      "Habitantes": 16992418
+    },
+    "Ciudad de México": {
+      "Actividades-Economicas": "Servicios financieros, gobierno, telecomunicaciones, comercio.",
+      "PIB": 4270240,
+      "Sueldos-y-salarios": 89310,
+      "Habitantes": 9209944
+    }
   },
+  "Actividades-Economicas": "Industria manufacturera (automotriz y aeronáutica), servicios financieros, comercio, minería, tecnologías de la información.",
+  "PIB": 11269924,
+  "Sueldos-y-salarios": 71744,
+  "Habitantes":40544363,
+  "alumnos": [
+    "iron"
+  ]
+},
 "Oriente": {
     "Estados": {
 		"Veracruz": {
@@ -179,32 +188,37 @@
       "angel"
     ]
   },
-  "Sur": {
-    "Estados": {
-      "Chiapas": {
-        "Actividades-Economicas": "Cacao, café, ecoturismo",
-        "PIB": 252000,
-        "Sueldos-y-salarios": 7000,
-        "Habitantes": 5543828
-      },
-      "Guerrero": {
-        "Actividades-Economicas": "Turismo de playa, minería, agricultura",
-        "PIB": 231000,
-        "Sueldos-y-salarios": 7200,
-        "Habitantes": 3540685
-      },
-      "Oaxaca": {
-        "Actividades-Economicas": "Artesanías, turismo cultural, agricultura",
-        "PIB": 226000,
-        "Sueldos-y-salarios": 7400,
-        "Habitantes": 4132148
-      }
+"Sur": {
+  "Estados": {
+    "Chiapas": {
+      "Actividades-Economicas": "Agricultura (café, plátano, cacao), ganadería, petróleo, producción hidroeléctrica y turismo ecológico.",
+      "PIB": 610000000000,
+      "Sueldos-y-salarios": 6500,
+      "Habitantes": 5500000
     },
-    "Actividades-Economicas": "Turismo cultural y de naturaleza, agroindustria.",
-    "PIB": 709000,
-    "Sueldos-y-salarios": 7200,
-    "Habitantes": 13237761
+    "Guerrero": {
+      "Actividades-Economicas": "Turismo (Acapulco, Ixtapa-Zihuatanejo), pesca, minería (oro, plata), comercio.",
+      "PIB": 580000000000,
+      "Sueldos-y-salarios": 6700,
+      "Habitantes": 3500000
+    },
+    "Oaxaca": {
+      "Actividades-Economicas": "Artesanías, agricultura (maíz, mezcal, café), turismo cultural (Monte Albán, Hierve el Agua), minería.",
+      "PIB": 630000000000,
+      "Sueldos-y-salarios": 7000,
+      "Habitantes": 4100000
+    }
   },
+  "Actividades-Economicas": "Turismo, agricultura, minería, comercio, producción hidroeléctrica.",
+  "PIB": 1820000000000,
+  "Sueldos-y-salarios": 6733,
+  "Habitantes":13100000,
+  "alumnos": [
+    "luisito",
+    "flores",
+    "juanpa"
+  ]
+},
 "Sureste": {
     "Estados": {
       "Yucatan": {
@@ -229,11 +243,34 @@
     "Actividades-Economicas": "Turismo, Extracción de petróleo y gas, agricultura, comercio, pesca",
     "PIB": "893,522",
     "Sueldos-y-salarios": "33,554",
-    "Habitantes": "5,218,900"
+    "Habitantes": "5,218,900",
+    "alumnos": [
+      "diego",
+      "joahn",
+      "abraham"
+    ]
   },
-  "alumnos": [
-    "diego",
-    "joahn",
-    "abraham"
-  ]
+  "Los que restan":{
+    "Estados": {
+      "Tlaxcala": {
+        "Actividades-Economicas": "Industria textil, agroindustria, comercio, servicios.",
+        "PIB": 50000000000,
+        "Sueldos-y-salarios": 6000,
+        "Habitantes": 1300000
+      },
+      "Morelos": {
+        "Actividades-Economicas": "Turismo, agricultura (caña de azúcar, floricultura), comercio, servicios.",
+        "PIB": 80000000000,
+        "Sueldos-y-salarios": 7000,
+        "Habitantes": 2000000
+      }
+    },
+    
+    "Actividades-Economicas": "Industria textil, agroindustria, turismo, comercio y servicios.",
+    "PIB": 130000000000,
+    "Sueldos-y-salarios": 6500,
+    "Habitantes": 3300000,
+    "alumnos":[]
+  }
+
 }
